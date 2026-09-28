@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Магазин</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">TELEGRAM SHOP</div>
+      <h1>Магазин</h1>
+    </div>
+    <button id="cartButton" class="cart-button">🛒 <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <div id="categories" class="categories"></div>
+    <section id="products" class="grid"></section>
+  </main>
+
+  <div id="cartSheet" class="sheet hidden">
+    <div class="sheet-card">
+      <div class="sheet-head">
+        <h2>Корзина</h2>
+        <button id="closeCart" class="icon-button">✕</button>
+      </div>
+      <div id="cartItems"></div>
+      <div class="total-row">
+        <span>Итого</span>
+        <strong id="cartTotal">0.00 €</strong>
+      </div>
+      <button id="checkoutButton" class="primary">Оформить заказ</button>
+    </div>
+  </div>
+
+  <div id="checkoutSheet" class="sheet hidden">
+    <div class="sheet-card">
+      <div class="sheet-head">
+        <h2>Оформление</h2>
+        <button id="closeCheckout" class="icon-button">✕</button>
+      </div>
+      <label>Имя<input id="name" maxlength="120" placeholder="Иван Иванов"></label>
+      <label>Телефон<input id="phone" maxlength="50" placeholder="+49..."></label>
+      <label>Адрес доставки<textarea id="address" maxlength="500" placeholder="Улица, дом, квартира"></textarea></label>
+      <button id="submitOrder" class="primary">Создать заказ</button>
+      <p class="hint">В этом MVP заказ создаётся без онлайн-оплаты. Платёжный провайдер можно подключить отдельно.</p>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
